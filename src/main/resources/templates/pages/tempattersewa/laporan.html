@@ -1,0 +1,145 @@
+<html
+        lang="en"
+        xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+        xmlns:th="http://www.thymeleaf.org"
+
+>
+<head>
+    <title>Co-Working Space</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" th:href="@{/assets/images/favicon.png}">
+
+    <!-- Custom CSS -->
+    <link th:href="@{/dist/css/style.min.css}" rel="stylesheet">
+    <th:block layout:fragment="content_css" />
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+
+
+    <![endif]-->
+
+
+    <style>
+div.a {
+  text-align: center;
+}
+
+div.b {
+  text-align: left;
+}
+
+div.c {
+  text-align: right;
+}
+
+div.d {
+  text-align: justify;
+}
+</style>
+</head>
+
+<th:block layout:fragment="content">
+
+    <table width="100%">
+        <tr>
+            <td width="25" align="center"><img src="data:image/png;base64,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" width="100%"></td>
+            <td width="50" align="center"><h1>Co-working space Laporan Tempat Sewa</h1><br><h2>Co-Working Space</h2></td>
+            <td width="25" align="center"><img th:src="@{/gambar/kerja.png}" width="100%"></td>
+        </tr>
+
+    </table>
+    <br><br>
+    <div class="text-center">
+        <h5>Jln. Swadaya 1 No 52 B, RT.12/RW.10, Pejaten Timur , Pasar Minggu, Jakarta Selatan. 12510</h5>
+    </div>
+    <br><br>
+
+    <div class="container-fluid">
+        <!-- ============================================================== -->
+        <!-- Start Page Content -->
+        <!-- ============================================================== -->
+        <!-- basic table -->
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Laporan Data Tempat Tersewa</h4>
+                        <div class="table-responsive">
+                            <table id="zero_config" class="table table-striped table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>No</th>
+                                    <th>Kode Meja</th>
+                                    <th>Nama</th>
+                                    <th>Total Biaya</th>
+                                    <th>Jam Sewa</th>
+                                    <th>Jam Selesai</th>
+                                    <th>QR CODE</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr th:each="k: ${tempattersewaList}">
+                                    <td th:text="${kStat.count}"></td>
+                                    <td th:text="${k?.getDataMeja()?.getKd_Meja()}"></td>
+                                    <td th:text="${k?.getDataMember()?.getNama()}"></td>
+                                    <td th:text="${k.getTotalBayar()}"></td>
+                                    <td th:text="${k.getJamAwal()}"></td>
+                                    <td th:text="${k.getJamAkhir()}"></td>
+                                    <td>
+                                        <a th:href="@{'/qr/'+${k?.getDataMeja()?.getKode_Qr_Meja()}+'.png'}">
+                                            <img th:src="@{'/qr/'+${k?.getDataMeja()?.getKode_Qr_Meja()}+'.png'}"
+                                                 style="width: auto;height:100px;" />
+                                        </a>
+                                    </td>
+                                </tr>
+
+                                </tfoot>
+                            </table>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br><br><br>
+    <div class="c">
+        <br><br>
+        <h4>Tanda Tangan</h4>
+        <br><br><br><br>
+        <h4>Pimpinan</h4>
+    </div>
+</th:block>
+<script>
+		window.print();
+	</script>
+<script th:src="@{/assets/libs/jquery/dist/jquery.min.js}"></script>
+<!-- Bootstrap tether Core JavaScript -->
+<script th:src="@{/assets/libs/popper.js/dist/umd/popper.min.js}"></script>
+<script th:src="@{/assets/libs/bootstrap/dist/js/bootstrap.min.js}"></script>
+<!-- apps -->
+<script th:src="@{/dist/js/app.min.js}"></script>
+<script th:src="@{/dist/js/app.init.mini-sidebar.js}"></script>
+<script th:src="@{/dist/js/app-style-switcher.js}"></script>
+<!-- slimscrollbar scrollbar JavaScript -->
+<script th:src="@{/assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js}"></script>
+<script th:src="@{/assets/extra-libs/sparkline/sparkline.js}"></script>
+<!--Wave Effects -->
+<script th:src="@{/dist/js/waves.js}"></script>
+<!--Menu sidebar -->
+<script th:src="@{/dist/js/sidebarmenu.js}"></script>
+<!--Custom JavaScript -->
+<script th:src="@{/dist/js/custom.min.js}"></script>
+<!-- Fragment JS-->
+</html>

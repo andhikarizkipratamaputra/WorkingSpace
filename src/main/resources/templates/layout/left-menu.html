@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+
+    <!-- ============================================================== -->
+    <!-- Left Sidebar - style you can find in sidebar.scss  -->
+    <!-- ============================================================== -->
+    <aside class="left-sidebar">
+        <!-- Sidebar scroll-->
+        <div class="scroll-sidebar">
+            <!-- Sidebar navigation-->
+            <nav class="sidebar-nav">
+                <ul id="sidebarnav">
+                    <li class="sidebar-item">
+                        <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                           th:href="@{/}"
+                           aria-expanded="false">
+                            <i class="mdi mdi-currency-btc"></i>
+                            <span class="hide-menu">Home</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                           th:href="@{/datamember}"
+                           aria-expanded="false">
+                            <i class="mdi mdi-currency-btc"></i>
+                            <span class="hide-menu">Data Member</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                           th:href="@{/datameja}"
+                           aria-expanded="false">
+                            <i class="mdi mdi-currency-btc"></i>
+                            <span class="hide-menu">Data Meja</span>
+                        </a>
+                    </li><li class="sidebar-item">
+                    <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                       th:href="@{/databiaya}"
+                       aria-expanded="false">
+                        <i class="mdi mdi-currency-btc"></i>
+                        <span class="hide-menu">Data Biaya Sewa</span>
+                    </a>
+                </li><li class="sidebar-item">
+                    <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                       th:href="@{/tempattersewa}"
+                       aria-expanded="false">
+                        <i class="mdi mdi-currency-btc"></i>
+                        <span class="hide-menu">Data Meja Tersewa</span>
+                    </a>
+                </li>
+
+
+
+
+                    <li class="nav-small-cap">
+                        <i class="mdi mdi-dots-horizontal"></i>
+                        <span class="hide-menu">Data Master</span>
+                    </li>
+                    <li class="sidebar-item">
+                        <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                           th:href="@{/menu}"
+                           aria-expanded="false">
+                            <i class="mdi mdi-format-list-bulleted-type"></i>
+                            <span class="hide-menu">Menu</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a class="sidebar-link has-arrow waves-effect waves-dark"
+                           href="javascript:void(0)"
+                           aria-expanded="false">
+                            <i class="mdi mdi-notification-clear-all"></i>
+                            <span class="hide-menu">Kelola User</span>
+                        </a>
+                        <ul aria-expanded="false" class="collapse first-level">
+                            <li class="sidebar-item">
+                                <a href="javascript:void(0)" class="sidebar-link">
+                                    <i class="mdi mdi-octagram"></i>
+                                    <span class="hide-menu"> Subadmin</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a href="javascript:void(0)" class="sidebar-link">
+                                    <i class="mdi mdi-octagram"></i>
+                                    <span class="hide-menu"> Operator</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a href="javascript:void(0)" class="sidebar-link">
+                                    <i class="mdi mdi-octagram"></i>
+                                    <span class="hide-menu"> Monitoring</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="sidebar-item">
+                        <a class="sidebar-link has-arrow waves-effect waves-dark"
+                           href="javascript:void(0)" aria-expanded="false">
+                            <i class="mdi mdi-notification-clear-all"></i>
+                            <span class="hide-menu"> Kelola Referensi</span>
+                        </a>
+                        <ul aria-expanded="false" class="collapse first-level">
+                            <li class="sidebar-item">
+                                <a class="has-arrow sidebar-link" href="javascript:void(0)" aria-expanded="false">
+                                    <i class="mdi mdi-playlist-plus"></i>
+                                    <span class="hide-menu">Organisasi</span>
+                                </a>
+                                <ul aria-expanded="false" class="collapse second-level">
+                                    <li class="sidebar-item">
+                                        <a href="javascript:void(0)" class="sidebar-link">
+                                            <i class="mdi mdi-octagram"></i>
+                                            <span class="hide-menu"> Organisasi I</span>
+                                        </a>
+                                    </li>
+                                    <li class="sidebar-item">
+                                        <a href="javascript:void(0)" class="sidebar-link">
+                                            <i class="mdi mdi-octagram"></i>
+                                            <span class="hide-menu"> Organisasi II</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="sidebar-item">
+                                <a class="has-arrow sidebar-link" href="javascript:void(0)" aria-expanded="false">
+                                    <i class="mdi mdi-playlist-plus"></i>
+                                    <span class="hide-menu">Lokasi</span>
+                                </a>
+                                <ul aria-expanded="false" class="collapse second-level">
+                                    <li class="sidebar-item">
+                                        <a href="javascript:void(0)" class="sidebar-link">
+                                            <i class="mdi mdi-octagram"></i>
+                                            <span class="hide-menu"> Provinsi</span>
+                                        </a>
+                                    </li>
+                                    <li class="sidebar-item">
+                                        <a href="javascript:void(0)" class="sidebar-link">
+                                            <i class="mdi mdi-octagram"></i>
+                                            <span class="hide-menu"> Kab./Kota</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <!-- End Sidebar navigation -->
+        </div>
+        <!-- End Sidebar scroll-->
+    </aside>
+    <!-- ============================================================== -->
+    <!-- End Left Sidebar - style you can find in sidebar.scss  -->
+    <!-- ============================================================== -->
+</html>

@@ -1,0 +1,70 @@
+<html
+        lang="en"
+        xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+        xmlns:th="http://www.thymeleaf.org"
+        layout:decorate="~{layout/master}"
+>
+<head>
+    <title>Co-Working Space</title>
+</head>
+
+<th:block layout:fragment="content">
+
+    <div class="container-fluid">
+        <!-- ============================================================== -->
+        <!-- Start Page Content -->
+        <!-- ============================================================== -->
+        <!-- basic table -->
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Tempat Tersewa</h4>
+                        <a th:href=@{'/tempattersewa/tambah'} role="button" class="btn btn-primary">
+                            <i class="mdi mdi-plus"></i> Tambah
+                        </a>
+                        <a th:href=@{'/tempattersewa/laporan'} role="button" class="btn btn-primary">
+                            <i class="mdi mdi-file"></i> Print
+                        </a>
+                        <div class="table-responsive">
+                            <table id="zero_config" class="table table-striped table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>No</th>
+                                    <th>Kode Meja</th>
+                                    <th>Nama</th>
+                                    <th>Total Biaya</th>
+                                    <th>Jam Sewa</th>
+                                    <th>Jam Selesai</th>
+                                    <th>Gambar Meja</th>
+                                    <th>Qr Code</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr th:each="k: ${tempatTersewaList}">
+                                    <td th:text="${kStat.count}"></td>
+                                    <td th:text="${k?.getDataMeja()?.getKd_Meja()}"></td>
+                                    <td th:text="${k?.getDataMember()?.getNama()}"></td>
+                                    <td th:text="${k.getTotalBayar()}"></td>
+                                    <td th:text="${k.getJamAwal()}"></td>
+                                    <td th:text="${k.getJamAkhir()}"></td>
+                                    <td>
+                                        <a th:href="@{'/qr/'+${k?.getDataMeja()?.getKode_Qr_Meja()}+'.png'}">
+                                            <img th:src="@{'/qr/'+${k?.getDataMeja()?.getKode_Qr_Meja()}+'.png'}"
+                                                 style="width: auto;height:100px;" />
+                                        </a>
+                                    </td>
+
+                                </tr>
+
+                                </tbody>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</th:block>
+</html>

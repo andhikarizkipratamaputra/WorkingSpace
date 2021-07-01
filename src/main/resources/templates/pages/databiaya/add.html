@@ -1,0 +1,163 @@
+<!DOCTYPE HTML>
+<html
+        lang="en"
+        xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+        xmlns:th="http://www.thymeleaf.org"
+        xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5"
+        layout:decorate="~{layout/master}"
+>
+<head>
+    <!-- Menyisipkan Bootstrap -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <title>Fresh Egg</title>
+</head>
+<body>
+<th:block layout:fragment="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Tambah Pembeli</h4>
+                        <h6 class="card-subtitle">Isi Data Pembeli<code> Telur</code> Yang di inginkan customer</h6>
+                    </div>
+                    <hr class="m-t-0">
+                    <form class="form-horizontal" role="form"
+                          th:action="@{/databiaya/create}"
+                          th:object="${data}"
+                          method="post"
+                    >
+
+
+                        <div class="card-body">
+                            <h4 class="card-title">Biaya Sewa</h4>
+                            <div class="form-group row align-items-center m-b-0">
+                                <label for="Biaya_Sewa-i" class="col-3 text-right control-label col-form-label">Biaya Sewa</label>
+                                <div class="col-9 border-left p-b-10 p-t-10">
+                                    <input type="text" class="form-control"
+                                           name="biaya_Sewa"
+                                           id="Biaya_Sewa-i"
+
+                                           placeholder="Masukan Kode Pengiriman">
+
+                                </div>
+                            </div>
+                            <div class="form-group row align-items-center m-b-0">
+                                <label class="col-3 text-right control-label col-form-label">Nama</label>
+                                <div class="col-9 border-left p-b-10 p-t-10">
+                                    <select class="form-control" id="datamember-i"
+                                            th:field="*{dataMember}"
+                                            name="datameja">
+                                        <option value="">--pilih--</option>
+                                        <option th:each="g:${DataMemberList}" th:text="${g.getNama()}"
+                                                th:value="${g.getId()}">
+                                        </option>
+                                    </select>
+                                </div>
+                            </div>
+
+
+                            <div class="form-group row align-items-center m-b-0">
+                                <label class="col-3 text-right control-label col-form-label">Kode Meja</label>
+                                <div class="col-9 border-left p-b-10 p-t-10">
+                                    <select class="form-control" id="datameja-i"
+                                            th:field="*{dataMeja}"
+                                            name="datameja">
+                                        <option value="">--pilih--</option>
+                                        <option th:each="g:${DataMejaList}" th:text="${g.getKd_Meja()}"
+                                                th:value="${g.getId()}">
+                                        </option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group row align-items-center m-b-0">
+                                <label for="JamSewa-i" class="col-3 text-right control-label col-form-label">Jam Sewa</label>
+                                <div class="col-9 border-left p-b-10 p-t-10">
+                                    <input type="datetime-local" class="form-control"
+                                           name="JamSewa"
+                                           id="JamSewa-i"
+
+                                           placeholder="Masukan Jam Sewa ">
+                                </div>
+                            </div>
+
+                            <div class="form-group row align-items-center m-b-0">
+                                <label for="JamSelesai-i" class="col-3 text-right control-label col-form-label">Jam Selesai</label>
+                                <div class="col-9 border-left p-b-10 p-t-10">
+                                    <input type="datetime-local" class="form-control"
+                                           name="JamSelesai"
+                                           id="JamSelesai-i"
+
+                                           placeholder="Masukan Jam Selesai">
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="card-body bg-light">
+                            <h4 class="card-title m-t-10 p-b-20">Kapasitas</h4>
+                            <div class="form-group row align-items-center m-b-0">
+                                <label for="KapasitasSewa-i" class="col-3 text-right control-label col-form-label">Kapasitas Sewa</label>
+                                <div class="col-9 border-left p-b-10 p-t-10">
+                                    <input type="text" class="form-control"
+                                           name="KapasitasSewa"
+                                           id="KapasitasSewa-i"
+
+                                           placeholder="Masukan Kapasitas Sewa">
+                                </div>
+                            </div>
+
+
+                            <div class="form-group row align-items-center m-b-0">
+                                <label for="FasilitasSewa-i" class="col-3 text-right control-label col-form-label">Fasilitas Sewa</label>
+                                <div class="col-9 border-left p-b-10 p-t-10">
+                                    <input type="text" class="form-control"
+                                           name="FasilitasSewa"
+                                           id="FasilitasSewa-i"
+
+                                           placeholder="Masukan Fasilitas Sewa">
+                                </div>
+                            </div>
+
+                            <div class="form-group row align-items-center m-b-0">
+                                <label for="StatusSewa-i" class="col-3 text-right control-label col-form-label">Status Sewa</label>
+                                <div class="col-9 border-left p-b-10 p-t-10">
+                                    <input type="text" class="form-control"
+                                           name="StatusSewa"
+                                           id="StatusSewa-i"
+
+                                           placeholder="Masukan Fasilitas Sewa">
+                                </div>
+                            </div>
+
+
+
+
+
+
+
+
+                            <div class="card-body">
+                                <div class="form-group m-b-0 text-right">
+                                    <button type="submit" class="btn btn-info waves-effect waves-light">Save</button>
+                                    <button type="reset" class="btn btn-dark waves-effect waves-light">Cancel</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>  <!-- end row -->
+            </div>
+        </div><!-- end col-12 -->
+    </div>
+</th:block>
+
+<!-- Menyisipkan JQuery dan Javascript Bootstrap -->
+
+</body>
+</html>

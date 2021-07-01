@@ -1,0 +1,113 @@
+<html
+        lang="en"
+        xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+        xmlns:th="http://www.thymeleaf.org"
+
+>
+<head>
+    <title>Co-Working Space</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" th:href="@{/assets/images/favicon.png}">
+    <title>Co-Working Space</title>
+    <!-- Custom CSS -->
+    <link th:href="@{/dist/css/style.min.css}" rel="stylesheet">
+    <th:block layout:fragment="content_css" />
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<th:block layout:fragment="content">
+
+    <table width="100%">
+        <tr>
+            <td width="25" align="center"><img th:src="@{/assets/images/logo-icon.png}" width="60%"></td>
+            <td width="50" align="center"><h1>Co-Working Space Laporan Data Meja</h1><br><h2>Jakarta</h2></td>
+            <td width="25" align="center"><img th:src="@{/assets/images/logo-light-icon.png}" width="60%"></td>
+        </tr>
+
+    </table>
+<br><br>
+    <div class="container-fluid">
+        <!-- ============================================================== -->
+        <!-- Start Page Content -->
+        <!-- ============================================================== -->
+        <!-- basic table -->
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Laporan Data Meja</h4>
+                        <div class="table-responsive">
+                            <table id="zero_config" class="table table-striped table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>No</th>
+                                    <th>Kode Meja</th>
+                                    <th>Harga Sewa</th>
+                                    <th>Kapasitas</th>
+                                    <th>Fasilitas</th>
+                                    <th>Qr Code</th>
+
+
+
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr th:each="k: ${dataMejaList}">
+                                    <td th:text="${kStat.count}"></td>
+                                    <td th:text="${k.getKd_Meja()}"></td>
+                                    <td th:text="${k.getHarga_Sewa()}"></td>
+                                    <td th:text="${k.getKapasitas()}"></td>
+                                    <td th:text="${k.getFasilitas()}"></td>
+                                    <td>
+                                        <a th:href="@{'/qr/'+${k.getKode_Qr_Meja()}+'.png'}">
+                                            <img th:src="@{'/qr/'+${k.getKode_Qr_Meja()}+'.png'}"
+                                                 style="width: auto;height:100px;" />
+                                        </a>
+                                    </td>
+
+                                </tr>
+
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</th:block>
+<script>
+		window.print();
+	</script>
+<script th:src="@{/assets/libs/jquery/dist/jquery.min.js}"></script>
+<!-- Bootstrap tether Core JavaScript -->
+<script th:src="@{/assets/libs/popper.js/dist/umd/popper.min.js}"></script>
+<script th:src="@{/assets/libs/bootstrap/dist/js/bootstrap.min.js}"></script>
+<!-- apps -->
+<script th:src="@{/dist/js/app.min.js}"></script>
+<script th:src="@{/dist/js/app.init.mini-sidebar.js}"></script>
+<script th:src="@{/dist/js/app-style-switcher.js}"></script>
+<!-- slimscrollbar scrollbar JavaScript -->
+<script th:src="@{/assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js}"></script>
+<script th:src="@{/assets/extra-libs/sparkline/sparkline.js}"></script>
+<!--Wave Effects -->
+<script th:src="@{/dist/js/waves.js}"></script>
+<!--Menu sidebar -->
+<script th:src="@{/dist/js/sidebarmenu.js}"></script>
+<!--Custom JavaScript -->
+<script th:src="@{/dist/js/custom.min.js}"></script>
+<!-- Fragment JS-->
+</html>
