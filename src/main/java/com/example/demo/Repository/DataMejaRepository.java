@@ -11,4 +11,6 @@ import java.util.Optional;
 
 public interface DataMejaRepository extends JpaRepository<DataMeja, Long> {
 
-    }
+
+
+}

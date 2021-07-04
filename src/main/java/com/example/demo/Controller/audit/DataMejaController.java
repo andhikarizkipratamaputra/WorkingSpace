@@ -5,28 +5,17 @@ import com.example.demo.Model.audit.DataMeja;
 import com.example.demo.Repository.DataMejaRepository;
 import com.example.demo.Util.QRCodeGenerator;
 import com.example.demo.Util.Token;
-import com.example.demo.exceptions.DataMejaNotFoundException;
 import com.google.zxing.WriterException;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
-import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.validation.Valid;
-import java.io.File;
 import java.io.IOException;
-import java.util.Arrays;
 import java.util.List;
 
 
@@ -34,37 +23,8 @@ import java.util.List;
 @RequestMapping("datameja")
 public class DataMejaController {
 
-
     @Autowired
     DataMejaRepository dataMejaRepository;
-
-    private final DataMejaRepository repository;
-
-    DataMejaController(DataMejaRepository repository){
-        this.repository = repository;
-    }
-
-    @GetMapping("/api/datameja")
-    List<DataMeja> all() {
-        return repository.findAll();
-
-    }
-
-    @PostMapping("/api/datameja")
-    DataMeja newapi(@RequestBody DataMeja dataMeja) {
-        return repository.save(dataMeja);
-    }
-
-    @GetMapping("/api/datameja/{id}")
-    DataMeja one(@PathVariable Long id) {
-
-        return repository.findById(id)
-                .orElseThrow(() -> new DataMejaNotFoundException(id));
-    }
-
-
-
-
 
 
 

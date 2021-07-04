@@ -2,21 +2,19 @@ package com.example.demo.Model.audit;
 
 import javax.persistence.*;
 
+
 @Entity
 @Table
 public class DataMeja {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public Long id;
-
     public String Kd_Meja;
     public int Harga_Sewa;
     public String Kapasitas;
     public String Fasilitas;
     public String Status_Sewa;
     public String Kode_Qr_Meja;
-
-
 
     public String getKode_Qr_Meja() {
         return Kode_Qr_Meja;
