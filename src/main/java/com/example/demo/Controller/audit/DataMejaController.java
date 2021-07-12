@@ -57,7 +57,7 @@ public class DataMejaController {
 
 
         String token = Token.randomAlphaNumeric(10);
-        dataMeja.setKode_Qr_Meja(token);
+        dataMeja.setKodeMeja(token);
         dataMejaRepository.save(dataMeja);
 
         //ini untuk Generate QR CODE

@@ -43,8 +43,8 @@
                                     <td th:text="${k.getKd_Meja()}"></td>
                                     <td th:text="${k.getHarga_Sewa()}"></td>
                                     <td>
-                                        <a th:href="@{'/qr/'+${k.getKode_Qr_Meja()}+'.png'}">
-                                            <img th:src="@{'/qr/'+${k.getKode_Qr_Meja()}+'.png'}"
+                                        <a th:href="@{'/qr/'+${k.getKodeMeja()}+'.png'}">
+                                            <img th:src="@{'/qr/'+${k.getKodeMeja()}+'.png'}"
                                                  style="width: auto;height:100px;" />
                                         </a>
                                     </td>

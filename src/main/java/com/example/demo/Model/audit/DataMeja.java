@@ -14,15 +14,17 @@ public class DataMeja {
     public String Kapasitas;
     public String Fasilitas;
     public String Status_Sewa;
-    public String Kode_Qr_Meja;
+    public String KodeMeja;
 
-    public String getKode_Qr_Meja() {
-        return Kode_Qr_Meja;
+    public String getKodeMeja() {
+        return KodeMeja;
     }
 
-    public void setKode_Qr_Meja(String kode_Qr_Meja) {
-        Kode_Qr_Meja = kode_Qr_Meja;
+    public void setKodeMeja(String kodeMeja) {
+        KodeMeja = kodeMeja;
     }
+
+
 
     public Long getId() {
         return id;

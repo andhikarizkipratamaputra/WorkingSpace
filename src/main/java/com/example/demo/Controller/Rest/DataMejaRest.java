@@ -36,9 +36,7 @@ public class DataMejaRest {
         return repository.save(newDataMeja);
     }
 
-
-
-    @GetMapping("/employees/{id}")
+    @GetMapping("/api/datameja/{id}")
     DataMeja one(@PathVariable Long id) {
 
         return repository.findById(id)
@@ -46,16 +44,12 @@ public class DataMejaRest {
     }
 
 
-
-
-
-
     @PutMapping("/api/datameja/{id}")
     DataMeja replaceDataMeja(@RequestBody DataMeja newDataMeja, @PathVariable Long id) {
 
         return repository.findById(id)
                 .map(dataMeja -> {
-                    dataMeja.setKode_Qr_Meja(newDataMeja.getKode_Qr_Meja());
+                    dataMeja.setKodeMeja(newDataMeja.getKodeMeja());
                     return repository.save(dataMeja);
                 })
                 .orElseGet(() -> {
