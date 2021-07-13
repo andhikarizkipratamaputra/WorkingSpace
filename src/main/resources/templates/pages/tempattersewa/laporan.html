@@ -97,8 +97,8 @@ div.d {
                                     <td th:text="${k.getJamAwal()}"></td>
                                     <td th:text="${k.getJamAkhir()}"></td>
                                     <td>
-                                        <a th:href="@{'/qr/'+${k?.getDataMeja()?.getKode_Qr_Meja()}+'.png'}">
-                                            <img th:src="@{'/qr/'+${k?.getDataMeja()?.getKode_Qr_Meja()}+'.png'}"
+                                        <a th:href="@{'/qr/'+${k?.getDataMeja()?.getKodeMeja()}+'.png'}">
+                                            <img th:src="@{'/qr/'+${k?.getDataMeja()?.getKodeMeja()}+'.png'}"
                                                  style="width: auto;height:100px;" />
                                         </a>
                                     </td>
