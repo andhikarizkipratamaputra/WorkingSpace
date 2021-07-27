@@ -76,6 +76,7 @@ public class TempatTersewaController {
 
         tempatTersewa.setJamAwal(JamAwal);
         tempatTersewa.setJamAkhir(JamAkhir);
+        tempatTersewa.setAvailable(false);
         tempatTersewaRepository.save(tempatTersewa);
         mView.setViewName("redirect:/tempattersewa");
         return mView;
@@ -87,6 +88,15 @@ public class TempatTersewaController {
         mView.addObject("tempattersewaList",tempatTersewaList);
         mView.setViewName("pages/tempattersewa/laporan");
         return mView;
+    }
+
+
+    @GetMapping("/delete/{id}")
+    public String deleteTempatTersewa(@PathVariable("id") Long id, Model model) {
+        TempatTersewa tempatTersewa = tempatTersewaRepository.findById(id).get();
+        tempatTersewaRepository.delete(tempatTersewa);
+        model.addAttribute("tempattersewa", tempatTersewaRepository.findAll());
+        return "redirect:/tempattersewa";
     }
 
 

@@ -1,7 +1,9 @@
 package com.example.demo.Controller.audit;
 
 
+import com.example.demo.Model.audit.DataBiaya;
 import com.example.demo.Model.audit.DataMeja;
+import com.example.demo.Repository.DataBiayaRepository;
 import com.example.demo.Repository.DataMejaRepository;
 import com.example.demo.Util.QRCodeGenerator;
 import com.example.demo.Util.Token;
@@ -25,8 +27,8 @@ public class DataMejaController {
 
     @Autowired
     DataMejaRepository dataMejaRepository;
-
-
+    @Autowired
+    DataBiayaRepository dataBiayaRepository;
 
     @GetMapping()
     public ModelAndView index(ModelAndView mView){
@@ -44,6 +46,9 @@ public class DataMejaController {
             model.addAttribute("data",new DataMeja());
         }
 
+        List<DataBiaya> dataBiayaList = dataBiayaRepository.findAll();
+        model.addAttribute("DataBiayaList", dataBiayaList);
+
         return "pages/datameja/add";
     }
 
@@ -57,6 +62,7 @@ public class DataMejaController {
 
 
         String token = Token.randomAlphaNumeric(10);
+        dataMeja.setAvailable(true);
         dataMeja.setKodeMeja(token);
         dataMejaRepository.save(dataMeja);
 
@@ -66,6 +72,7 @@ public class DataMejaController {
         mView.setViewName("redirect:/datameja");
         return mView;
     }
+
 
 
     @GetMapping("/show/{id}")

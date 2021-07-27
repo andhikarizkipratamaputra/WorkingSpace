@@ -23,6 +23,16 @@ public class TempatTersewa {
     public Date JamAwal;
     public Date JamAkhir;
 
+    public Boolean getAvailable() {
+        return isAvailable;
+    }
+
+    public void setAvailable(Boolean available) {
+        isAvailable = available;
+    }
+
+    public Boolean isAvailable;
+
     public Long getId() {
         return id;
     }

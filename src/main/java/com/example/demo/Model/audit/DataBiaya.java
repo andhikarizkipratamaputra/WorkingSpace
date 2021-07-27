@@ -26,15 +26,6 @@ public class DataBiaya {
     public String FasilitasSewa;
     public Date JamSewa;
     public Date JamSelesai;
-    public Boolean isAvailable;
-
-    public Boolean getAvailable() {
-        return isAvailable;
-    }
-
-    public void setAvailable(Boolean available) {
-        isAvailable = available;
-    }
 
     public DataMember getDataMember() {
         return dataMember;

@@ -75,7 +75,6 @@ public class DataBiayaController {
 
         dataBiaya.setJamSewa(JamSewa);
         dataBiaya.setJamSelesai(JamSelesai);
-        dataBiaya.setAvailable(true);
         dataBiayaRepository.save(dataBiaya);
         mView.setViewName("redirect:/databiaya");
         return mView;

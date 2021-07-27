@@ -9,12 +9,24 @@ public class DataMeja {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public Long id;
+
+
+
     public String Kd_Meja;
     public int Harga_Sewa;
     public String Kapasitas;
     public String Fasilitas;
     public String Status_Sewa;
     public String KodeMeja;
+    public Boolean isAvailable;
+
+    public Boolean getAvailable() {
+        return isAvailable;
+    }
+
+    public void setAvailable(Boolean available) {
+        isAvailable = available;
+    }
 
     public String getKodeMeja() {
         return KodeMeja;
@@ -23,9 +35,6 @@ public class DataMeja {
     public void setKodeMeja(String kodeMeja) {
         KodeMeja = kodeMeja;
     }
-
-
-
     public Long getId() {
         return id;
     }

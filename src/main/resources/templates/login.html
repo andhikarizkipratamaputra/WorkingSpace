@@ -66,7 +66,7 @@
                 <!-- Form -->
                 <div class="row">
                     <div class="col-12">
-                        <form class="form-horizontal m-t-20" id="loginform" action="index.html">
+
 
                             <div class = "input-group mb-3">
                                 <div class="input-group-prepend">
@@ -113,34 +113,11 @@
                                     Don't have an account? <a href="/" th:href="@{/registration}" class="text-info m-l-5"><b>Sign Up</b></a>
                                 </div>
                             </div>
-                        </form>
+
                     </div>
                 </div>
             </div>
-            <div id="recoverform">
-                <div class="logo">
-                    <span class="db"><img th:src="@{/assets/images/logo-icon.png}" alt="logo" /></span>
-                    <h5 class="font-medium m-b-20">Recover Password</h5>
-                    <span>Enter your Email and instructions will be sent to you!</span>
-                </div>
-                <div class="row m-t-20">
-                    <!-- Form -->
-                    <form class="col-12" action="index.html">
-                        <!-- email -->
-                        <div class="form-group row">
-                            <div class="col-12">
-                                <input class="form-control form-control-lg" type="email" required="" placeholder="Username">
-                            </div>
-                        </div>
-                        <!-- pwd -->
-                        <div class="row m-t-20">
-                            <div class="col-12">
-                                <button class="btn btn-block btn-lg btn-danger" type="submit" name="action">Reset</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
+
         </div>
     </div>
     <!-- ============================================================== -->
@@ -165,7 +142,7 @@
 <script th:src="@{/assets/libs/jquery/dist/jquery.min.js}"></script>
 <!-- Bootstrap tether Core JavaScript -->
 <script th:src="@{/assets/libs/popper.js/dist/umd/popper.min.js}"></script>
-<script th:src="@{assets/libs/bootstrap/dist/js/bootstrap.min.js}"></script>
+<script th:src="@{/assets/libs/bootstrap/dist/js/bootstrap.min.js}"></script>
 <!-- ============================================================== -->
 <!-- This page plugin js -->
 <!-- ============================================================== -->

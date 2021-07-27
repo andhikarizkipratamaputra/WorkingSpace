@@ -33,6 +33,7 @@
                                     <th>No</th>
                                     <th>Kode Meja</th>
                                     <th>Nama</th>
+                                    <th>Total Pembayaran</th>
                                     <th>Action</th>
                                 </tr>
                                 </thead>
@@ -41,6 +42,7 @@
                                     <td th:text="${kStat.count}"></td>
                                     <td th:text="${k?.getDataMeja()?.getKd_Meja()}"></td>
                                     <td th:text="${k?.getDataMember()?.getNama()}"></td>
+                                    <td th:text="${k.getBiaya_Sewa()}"></td>
                                     <td>
                                         <a th:href="@{'/databiaya/delete/'+${k.getId()}}" class="mdi mdi-delete"> </a>
                                         <a th:href="@{'/databiaya/show/'+${k.getId()}}" class="mdi mdi-eye-outline"> </a>
